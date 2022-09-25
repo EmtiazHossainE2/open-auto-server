@@ -8,6 +8,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Routes 
+const recordRoute = require('./Routes/v1/userRecord.route.js')
+
+// Use v1 Api
+app.use('/userRecord' , recordRoute)
+
+
 /* Testing api  */
 app.get('/', (req, res) => {
   res.send('Server is running')
